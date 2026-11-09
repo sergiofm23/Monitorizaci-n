@@ -266,38 +266,35 @@
 
 ### 1. ¿Cómo comprobarías la cantidad de memoria RAM disponible?
 
-Se comprueba mediante el comando **`free -h`**. En la salida obtenida, se debe consultar el valor de la columna **`available`**, el cual representa la cantidad de memoria que está disponible inmediatamente para ser asignada a nuevos procesos sin necesidad de utilizar memoria de intercambio (*swap*).
+Se comprueba mediante el comando **`free -h`**. Después miras  el valor de la columna **`available`**, que representa la cantidad de memoria que está disponible inmediatamente para ser asignada a nuevos procesos sin necesidad de utilizar memoria swap.
 
 
 
 ### 2. ¿Qué diferencia existe entre `df` y `du`?
 
-**`df` (Disk Free):** Trabaja a nivel de **sistema de archivos y particiones**, mostrando el espacio total, usado y disponible en cada punto de montaje.
-**`du` (Disk Usage):** Trabaja a nivel de **archivos y directorios**, calculando el espacio acumulado que ocupa una carpeta específica y sus ficheros contenidos.
-
+**`df`:** Muestra el espacio libre y ocupado a nivel general de particiones y sistemas de archivos.
+**`du`:** Calcula el espacio exacto que consume un directorio o archivo específico dentro del disco.
 
 ### 3. ¿Qué diferencias existen entre `ss` y `nmap`?
 
 **`ss`:** Es una herramienta de consulta **interna** del kernel del propio sistema operativo. Muestra qué sockets, conexiones y puertos están activos en la máquina local.
-**`nmap`:** Es un escáner de red **externo** (o interno) que envía paquetes de prueba a través de la red para averiguar qué puertos se encuentran abiertos en una dirección IP determinada.
+**`nmap`:** Es un escáner de red que envía paquetes de prueba a través de la red para averiguar qué puertos se encuentran abiertos en una dirección IP determinada.
 
 
 ### 4. ¿Cómo comprobarías si un servidor tiene abierto el puerto 80?
 
-**Localmente:** Ejecutando `ss -tulpn | grep :80` para comprobar si hay algún servicio escuchando en dicho puerto.
-**A través de la red:** Ejecutando `nmap -p 80 <IP_del_servidor>` desde otro equipo para comprobar si el puerto responde a peticiones externas.
+**Localmente:** Ejecutando `ss -tulpn | grep :80` para comprobar si hay algún servicio escuchando en el puerto.
+**A través de la red:** Ejecutando `nmap -p 80 <IP-equipo>` desde otro equipo para comprobar si el puerto responde a peticiones externas.
 
 
 ### 5. ¿Qué herramienta utilizarías para detectar un posible cuello de botella en el disco?
 
-Se utilizaría **`iostat -x`** (o herramientas interactivas como **`iotop`**), prestando especial atención a la columna `%util` (porcentaje de utilización del dispositivo) y a los tiempos de espera del disco (`await`).
+Se utilizaría **`iostat -x`** prestando especial atención a la columna `%util` (porcentaje de utilización del dispositivo) y a los tiempos de espera del disco (`await`).
 
 
 
 ### 6. ¿Por qué es importante monitorizar los recursos de un servidor?
 
-La monitorización constante permite:
-
-Garantizar el correcto funcionamiento y la disponibilidad continua de los servicios.
-Detectar fallos, cuellos de botella o intrusiones de seguridad antes de que causen una caida del sistema.
-Planificar ampliaciones de hardware (memoria, almacenamiento, CPU) con base en patrones reales de consumo.
+Para asegurar la disponibilidad continua de los servicios.
+Para detectar fallos o cuellos de botella antes de que provoquen una caída.
+Para planificar mejoras de hardware (CPU, RAM o disco) basándose en el uso real.
