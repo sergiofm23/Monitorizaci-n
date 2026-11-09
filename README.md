@@ -15,7 +15,7 @@
     * `-ef`: Muestra una lista completa de procesos con formato de jerarquía (PID y PPID).
 
 **Captura de pantalla:**
-<img src="Capturas/ps.png" width="400" alt="Comando ps" style="margin-top: 20px">
+<img src="Capturas/ps.png" width="400" alt="Comando ps">
 
 **Interpretación:** En la pantalla se observa la lista de procesos activos junto a su PID (Process ID), el porcentaje de CPU y memoria que consumen, el usuario que los ejecuta y el comando correspondiente. Permite a un administrador detectar qué procesos se están ejecutando y si hay alguno consumiendo recursos indebidos.
 
