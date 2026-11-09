@@ -10,7 +10,7 @@
     * `aux`: Muestra todos los procesos de todos los usuarios en formato detallado.
     * `-ef`: Muestra una lista completa de procesos con formato de jerarquía (PID y PPID).
 * **Captura de pantalla:**
-  ![Comando ps](capturas/ps.png)
+  ![Comando ps](Capturas/ps.png)
 * **Interpretación:** En la pantalla se observa la lista de procesos activos junto a su PID (Process ID), el porcentaje de CPU y memoria que consumen, el usuario que los ejecuta y el comando correspondiente. Permite a un administrador detectar qué procesos se están ejecutando y si hay alguno consumiendo recursos indebidos.
 
 ---
@@ -23,7 +23,7 @@
     * `-u [usuario]`: Filtra y muestra únicamente los procesos pertenecientes al usuario especificado.
     * `-d [segundos]`: Define el intervalo de refresco de la pantalla (por ejemplo, `top -d 2`).
 * **Captura de pantalla:**
-  ![Comando top](capturas/top.png)
+  ![Comando top](Capturas/top.png)
 * **Interpretación:** La parte superior muestra la carga del sistema (*load average*), el porcentaje de uso de CPU (usuario, sistema, inactivo) y el uso general de RAM y Swap. La parte inferior detalla los procesos ordenados por consumo de CPU. Es clave para diagnosticar rápidamente sobrecargas en el servidor en tiempo real.
 
 ---
@@ -36,7 +36,7 @@
     * `-u [usuario]`: Muestra solo los procesos de un usuario específico.
     * `-C`: Inicia la interfaz en modo monocromo (sin colores).
 * **Captura de pantalla:**
-  ![Comando htop](capturas/htop.png)
+  ![Comando htop](Capturas/htop.png)
 * **Interpretación:** Muestra de forma visual (con barras de colores) el uso individual de cada núcleo de la CPU, la memoria RAM y la memoria de intercambio. Permite buscar, filtrar y finalizar (*kill*) procesos fácilmente con accesos directos de teclado.
 
 ---
@@ -49,7 +49,7 @@
     * `-m`: Enfoca la salida en la información sobre el uso de memoria de los procesos.
     * `-d`: Muestra estadísticas detalladas sobre el uso del disco.
 * **Captura de pantalla:**
-  ![Comando atop](capturas/atop.png)
+  ![Comando atop](Capturas/atop.png)
 * **Interpretación:** A diferencia de `top`, resaltará los recursos saturados (marcándolos en color) y analiza el impacto combinado de CPU, memoria, discos y red. Es útil para identificar exactamente qué recurso está actuando como cuello de botella.
 
 ---
@@ -64,7 +64,7 @@
     * `-h`: Muestra los datos en un formato legible para humanos (KB, MB, GB).
     * `-s [segundos]`: Actualiza la información continuamente según el intervalo especificado (ej. `free -h -s 3`).
 * **Captura de pantalla:**
-  ![Comando free](capturas/free.png)
+  ![Comando free](Capturas/free.png)
 * **Interpretación:** Muestra la RAM total, la usada, la libre y la columna **available** (disponible), que refleja la memoria real utilizable para nuevas aplicaciones sin recurrir a la swap. Un administrador la utiliza para comprobar si el servidor se está quedando sin memoria física.
 
 ---
@@ -79,7 +79,7 @@
     * `-h`: Muestra el tamaño de las particiones en formato legible (MB, GB).
     * `-T`: Indica el tipo de sistema de archivos de cada partición (ext4, tmpfs, etc.).
 * **Captura de pantalla:**
-  ![Comando df](capturas/df.png)
+  ![Comando df](Capturas/df.png)
 * **Interpretación:** Muestra el punto de montaje, la capacidad total, el espacio usado y el porcentaje de ocupación de cada volumen. Permite prevenir que una partición de disco se llene al 100% y bloquee el sistema.
 
 ---
@@ -92,7 +92,7 @@
     * `-s`: Muestra únicamente el resumen del tamaño total del directorio indicado, omitiendo el detalle de sus subcarpetas.
     * `-h`: Expresa los tamaños en un formato legible para humanos.
 * **Captura de pantalla:**
-  ![Comando du](capturas/du.png)
+  ![Comando du](Capturas/du.png)
 * **Interpretación:** Muestra el espacio exacto que está ocupando una carpeta concreta en el disco. Es vital para localizar qué archivos o directorios específicos están consumiendo demasiado almacenamiento cuando el espacio escasea.
 
 ---
@@ -105,7 +105,7 @@
     * `-d`: Muestra únicamente las estadísticas de los dispositivos de almacenamiento (discos).
     * `-x`: Muestra estadísticas extendidas de entrada/salida (como tiempo de espera y porcentaje de utilización del dispositivo).
 * **Captura de pantalla:**
-  ![Comando iostat](capturas/iostat.png)
+  ![Comando iostat](Capturas/iostat.png)
 * **Interpretación:** Ofrece métricas como operaciones de lectura/escritura por segundo (tps), kilobytes leídos/escritos por segundo (kB_read/s, kB_wrtn/s) y el porcentaje de ocupación del disco (`%util`). Ayuda a detectar si el disco duro es el responsable del rendimiento lento del servidor.
 
 ---
@@ -120,7 +120,7 @@
     * `-i [interfaz]`: Especifica la interfaz de red a escuchar (ej. `tcpdump -i eth0` o `tcpdump -i lo`).
     * `-c [número]`: Captura únicamente el número exacto de paquetes indicado y se detiene.
 * **Captura de pantalla:**
-  ![Comando tcpdump](capturas/tcpdump.png)
+  ![Comando tcpdump](Capturas/tcpdump.png)
 * **Interpretación:** Muestra el origen, el destino, el protocolo y la carga útil de las tramas enviadas y recibidas. Sirve para auditar el tráfico, solucionar problemas de conectividad o inspeccionar anomalías de red.
 
 ---
@@ -135,7 +135,7 @@
     * `-tulpn`: Muestra sockets TCP (`-t`), UDP (`-u`), en modo escucha (`-l`), mostrando números de puerto (`-p`) y el proceso asociado (`-n`).
     * `-a`: Muestra todas las conexiones (tanto en escucha como establecidas).
 * **Captura de pantalla:**
-  ![Comando ss](capturas/ss.png)
+  ![Comando ss](Capturas/ss.png)
 * **Interpretación:** Lista los servicios del sistema que están escuchando en puertos concretos y las conexiones activas con otros equipos. Es primordial para comprobar qué servicios están activos y si hay servicios no autorizados expuestos.
 
 ---
@@ -148,7 +148,7 @@
     * `-p [puertos]`: Escanea solo los puertos indicados (ej. `nmap -p 80,443 127.0.0.1`).
     * `-sV`: Detecta la versión de los servicios que se ejecutan en los puertos abiertos.
 * **Captura de pantalla:**
-  ![Comando nmap](capturas/nmap.png)
+  ![Comando nmap](Capturas/nmap.png)
 * **Interpretación:** Indica el estado de los puertos (abierto, cerrado o filtrado por firewall) y el servicio asociado. Permite evaluar la seguridad de un servidor detectando vulnerabilidades o servicios accesibles desde el exterior.
 
 ---
