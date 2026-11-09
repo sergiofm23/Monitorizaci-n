@@ -207,10 +207,32 @@
 
 **Interpretación:** Muestra el origen, el destino, el protocolo y la carga útil de las tramas enviadas y recibidas. Sirve para auditar el tráfico, solucionar problemas de conectividad o inspeccionar anomalías de red.
 
+---
+
+### `iptraf`
+**Nombre y finalidad:** Genera estadísticas interactivas de tráfico de red en tiempo real (conexiones TCP, UDP, etc.).
+**Sintaxis :**
+  * Sintaxis: `sudo iptraf-ng`
+    
+**Captura de pantalla:**
+ ![Comando iptraf](Capturas/iptraf.png)
+
+**Interpretación:** Ofrece un menú en consola para analizar el tráfico por puerto, interfaz o paquete.
 
 ---
 
+### `bmon`
 
+**Nombre y finalidad:** Monitoriza el ancho de banda y la tasa de transferencia en las interfaces de red.
+**Sintaxis :** 
+  * Sintaxis: ` bmon [opciones] (Ej: bmon -p eth0)`
+    
+**Captura de Pantalla:**
+![Comando bmon](Capturas/bmon.png)
+
+**Interpretación:** Despliega tráfico de ASCII con el flujo de datos entrante y saliente.
+
+---
 
 ## 5. Puertos y conexiones
 
